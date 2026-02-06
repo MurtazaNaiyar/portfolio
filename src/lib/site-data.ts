@@ -21,6 +21,7 @@ export const CONTACT_LINKS = [
     label: "Email",
     value: SITE.email,
     desc: "Best for project and collaboration inquiries.",
+    external: false,
   },
   {
     href: "https://linkedin.com/in/murtazanaiyar",
