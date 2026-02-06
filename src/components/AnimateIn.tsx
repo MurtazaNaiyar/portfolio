@@ -38,7 +38,7 @@ export default function AnimateIn({
 
   return (
     <Tag
-      ref={ref as React.RefObject<HTMLElement>}
+      ref={ref as React.Ref<HTMLDivElement & HTMLUListElement & HTMLElement>}
       className={`${stagger ? "animate-in-view-stagger" : "animate-in-view"} ${className}`}
     >
       {children}
