@@ -1,6 +1,6 @@
 # murtazanaiyar.com — Portfolio
 
-Portfolio site for Murtaza Naiyar, GenAI Engineer. Built with Next.js 15 and Tailwind CSS.
+Portfolio site for Murtaza Naiyar, GenAI Engineer. Built with Next.js 15 and Tailwind CSS. Deploy via Vercel (see DEPLOY-VERCEL-STEPS.md).
 
 ## Run locally
 
