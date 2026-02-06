@@ -1,6 +1,6 @@
 # murtazanaiyar.com — Portfolio
 
-Portfolio site for Murtaza Naiyar, GenAI Engineer. Built with Next.js 15 and Tailwind CSS. Deploy via Vercel (see DEPLOY-VERCEL-STEPS.md).
+Portfolio site for Murtaza Naiyar, GenAI Engineer. Built with Next.js 15 and Tailwind CSS.
 
 ## Run locally
 
@@ -18,13 +18,11 @@ npm run build
 npm start
 ```
 
-## Deploy to Vercel (with murtazanaiyar.com)
+## Deploy & domain
 
-1. Push this repo to GitHub.
-2. Go to [vercel.com](https://vercel.com) → New Project → Import the repo.
-3. Deploy (default settings are fine).
-4. In Vercel: **Settings → Domains** → Add `murtazanaiyar.com`.
-5. At your domain registrar, add the DNS records Vercel shows (usually A record `76.76.21.21` for root, or CNAME for `www`).
+- **Deploy to Vercel:** See **DEPLOY-VERCEL-STEPS.md**.
+- **Point domain (murtazanaiyar.com):** See **DOMAIN-SETUP.md**.
+- **Hosting overview (env, Python option):** See **HOSTING.md**.
 
 ## Chat bot (Python backend)
 
@@ -46,4 +44,4 @@ Without this, the chat still works via the Next.js `/api/chat` route. See `pytho
 - **About / Experience / Projects:** Replace placeholder text with your real bio, roles, and projects. Projects: add real `link` and `repo` URLs.
 - **Production URL:** Set `NEXT_PUBLIC_SITE_URL=https://murtazanaiyar.com` in Vercel (or your host) so sitemap, robots, and Open Graph use the correct base URL.
 
-See `PORTFOLIO_PLAN.md` for the full plan and `CRITIQUE.md` for improvement notes.
+See **PORTFOLIO_PLAN.md** (plan) and **CRITIQUE.md** (improvement notes).
