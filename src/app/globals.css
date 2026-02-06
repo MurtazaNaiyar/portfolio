@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0c1220;
+  --foreground: #f0fdf4;
+  --accent: #10b981;
+  --accent-hover: #059669;
+  --surface-elevated: #1a2332;
+  --border: #2d3a4f;
+  --glow: rgba(16, 185, 129, 0.2);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+}
+
+/* Subtle noise overlay for depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus ring for accessibility */
+a:focus-visible,
+button:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-[var(--background)];
+}
+
+/* Stagger delays for animations */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Scroll-triggered: hidden until in view */
+.animate-in-view {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-in-view.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children when parent gets .is-visible */
+.animate-in-view-stagger .animate-in-view-child {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.animate-in-view-stagger.is-visible .animate-in-view-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+.animate-in-view-stagger.is-visible .animate-in-view-child:nth-child(1) { transition-delay: 0ms; }
+.animate-in-view-stagger.is-visible .animate-in-view-child:nth-child(2) { transition-delay: 80ms; }
+.animate-in-view-stagger.is-visible .animate-in-view-child:nth-child(3) { transition-delay: 160ms; }
+.animate-in-view-stagger.is-visible .animate-in-view-child:nth-child(4) { transition-delay: 240ms; }
+.animate-in-view-stagger.is-visible .animate-in-view-child:nth-child(5) { transition-delay: 320ms; }
+.animate-in-view-stagger.is-visible .animate-in-view-child:nth-child(6) { transition-delay: 400ms; }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Skip link: visible on focus for keyboard/screen reader */
+.skip-link {
+  @apply absolute left-4 top-4 z-[100] -translate-y-16 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-[var(--background)];
+}
