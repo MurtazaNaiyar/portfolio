@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     title: "Contact | Murtaza Naiyar",
     description: "Get in touch. Open to collaboration, consulting, and interesting problems.",
   },
+  alternates: { canonical: `${SITE.baseUrl}/contact` },
 };
 
 export default function ContactPage() {

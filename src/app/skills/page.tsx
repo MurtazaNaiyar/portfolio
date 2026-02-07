@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/AnimateIn";
+import { SKILL_GROUPS } from "@/lib/portfolio-content";
+import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Skills | Murtaza Naiyar",
@@ -8,44 +10,8 @@ export const metadata: Metadata = {
     title: "Skills | Murtaza Naiyar",
     description: "GenAI, ML, and engineering — in practice for 10 years.",
   },
+  alternates: { canonical: `${SITE.baseUrl}/skills` },
 };
-
-const skillGroups = [
-  {
-    title: "GenAI & LLMs",
-    icon: "◇",
-    items: [
-      "LLM fine-tuning & prompting",
-      "RAG (retrieval-augmented generation)",
-      "Agents & tool use",
-      "Evaluation & evals frameworks",
-    ],
-  },
-  {
-    title: "ML & NLP",
-    icon: "◈",
-    items: [
-      "Machine learning (supervised, unsupervised)",
-      "NLP (transformers, embeddings)",
-      "Model deployment & serving",
-    ],
-  },
-  {
-    title: "Languages & frameworks",
-    icon: "◆",
-    items: ["Python", "PyTorch", "TensorFlow", "LangChain", "Hugging Face"],
-  },
-  {
-    title: "Tools & platforms",
-    icon: "○",
-    items: [
-      "MLOps & experiment tracking",
-      "Vector DBs & search",
-      "Cloud (AWS / GCP)",
-      "CI/CD & production ML",
-    ],
-  },
-];
 
 export default function SkillsPage() {
   return (
@@ -60,7 +26,7 @@ export default function SkillsPage() {
       </AnimateIn>
 
       <AnimateIn className="mt-16 grid gap-6 sm:grid-cols-2" stagger>
-        {skillGroups.map((group) => (
+        {SKILL_GROUPS.map((group) => (
           <div
             key={group.title}
             className="animate-in-view-child group rounded-2xl border border-surface-border bg-surface-elevated/50 p-6 transition-all duration-300 hover:border-accent/30 hover:bg-surface-elevated hover:-translate-y-1 hover:scale-[1.01]"

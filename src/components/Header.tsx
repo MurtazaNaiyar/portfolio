@@ -65,7 +65,9 @@ export default function Header() {
           type="button"
           className="md:hidden p-2.5 rounded-xl text-slate-400 hover:text-foreground hover:bg-surface-elevated transition-colors"
           onClick={() => setMobileOpen((o) => !o)}
-          aria-label="Toggle menu"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-nav"
         >
           <svg
             className="w-6 h-6"
@@ -93,7 +95,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <nav className="md:hidden border-t border-surface-border bg-surface/95 backdrop-blur-md px-4 py-4">
+        <nav id="mobile-nav" className="md:hidden border-t border-surface-border bg-surface/95 backdrop-blur-md px-4 py-4" aria-label="Mobile navigation">
           <ul className="flex flex-col gap-1">
             {navItems.map(({ href, label }) => (
               <li key={href}>

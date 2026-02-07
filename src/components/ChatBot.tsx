@@ -15,7 +15,6 @@ export default function ChatBot() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
-  const closeBtnRef = useRef<HTMLButtonElement>(null);
 
   const close = useCallback(() => setOpen(false), []);
 
@@ -43,11 +42,8 @@ export default function ChatBot() {
     setMessages((m) => [...m, { role: "user", content: text }]);
     setLoading(true);
 
-    const chatApiUrl = process.env.NEXT_PUBLIC_CHAT_API_URL;
-    const endpoint = chatApiUrl ? `${chatApiUrl.replace(/\/$/, "")}/chat` : "/api/chat";
-
     try {
-      const res = await fetch(endpoint, {
+      const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: text }),
@@ -96,7 +92,6 @@ export default function ChatBot() {
         <div className="flex items-center justify-between border-b border-surface-border px-4 py-3">
           <span className="font-semibold text-foreground">Ask about Murtaza</span>
           <button
-            ref={closeBtnRef}
             type="button"
             onClick={close}
             className="rounded-lg p-1.5 text-slate-400 hover:bg-surface-border hover:text-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"

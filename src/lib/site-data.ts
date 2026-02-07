@@ -78,3 +78,39 @@ export const SAME_AS = [
   "https://instagram.com/MurtazaNaiyar",
   "https://youtube.com/@MurtazaNaiyar",
 ] as const;
+
+/** Home page: hero tagline and skills. */
+export const HOME_TAGLINE =
+  "Building intelligent systems with LLMs, ML, and modern AI. 10 years turning research into products.";
+
+export const HOME_SKILLS = [
+  "LLMs & GenAI",
+  "Machine Learning",
+  "RAG & Agents",
+  "Python",
+  "MLOps",
+  "NLP",
+] as const;
+
+/** Home page: "What I do" section intro and highlight cards. */
+export const HOME_WHAT_I_DO_INTRO =
+  "From idea to production: LLMs, RAG, agents, and systems that scale.";
+
+export const HOME_HIGHLIGHTS = [
+  {
+    title: "From research to production",
+    description: "Design and deploy LLM-based products, RAG systems, and evaluation pipelines.",
+  },
+  {
+    title: "Agents & tool use",
+    description: "Multi-agent workflows, tool use, and human-in-the-loop for real applications.",
+  },
+  {
+    title: "Reliable AI systems",
+    description: "MLOps, monitoring, and production-grade ML so AI works when it matters.",
+  },
+] as const;
+
+/** Home page: quick intro paragraph. */
+export const HOME_QUICK_INTRO =
+  "I'm a GenAI engineer with a decade of experience designing and shipping ML and AI systems. I focus on large language models, RAG, agents, and putting research into production. If you're building something with AI or want to collaborate, I'd love to hear from you.";

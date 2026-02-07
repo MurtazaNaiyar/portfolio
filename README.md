@@ -20,28 +20,20 @@ npm start
 
 ## Deploy & domain
 
-- **Deploy to Vercel:** See **DEPLOY-VERCEL-STEPS.md**.
-- **Point domain (murtazanaiyar.com):** See **DOMAIN-SETUP.md**.
-- **Hosting overview (env, Python option):** See **HOSTING.md**.
+- **Deploy:** Push to GitHub and connect the repo in [Vercel](https://vercel.com). Vercel builds on every push to `main`. Set env `NEXT_PUBLIC_SITE_URL=https://murtazanaiyar.com` (and optionally `OPENAI_API_KEY` for chat).
+- **Domain:** In Vercel, add your domain (e.g. murtazanaiyar.com) and follow the DNS instructions (A record or CNAME). DNS can take a few minutes to propagate.
 
-## Chat bot (Python backend)
+## Chat bot
 
-The floating chat can use a **Python API** so all bot logic stays in Python. Optional.
-
-1. Run the Python API: `cd python-api && pip install -r requirements.txt && uvicorn main:app --reload --port 8000`
-2. In the project root, create `.env.local` with `NEXT_PUBLIC_CHAT_API_URL=http://localhost:8000`
-3. Restart Next.js dev server. The chat will call the Python backend.
-
-Without this, the chat still works via the Next.js `/api/chat` route. See `python-api/README.md` for details.
-
-**Updating what the chat knows:** Edit **`src/lib/portfolio-context.ts`** only. The Next.js chat uses it directly. If you use the Python API, set `PORTFOLIO_CONTEXT_URL` to your site URL so Python fetches this same context from `GET /api/portfolio-context`.
+The floating chat uses the Next.js **`/api/chat`** route. To change what the bot knows, edit **`src/lib/portfolio-context.ts`**. Optional: set `OPENAI_API_KEY` in `.env.local` for richer answers.
 
 ## Content to update
 
-- **Links & site copy:** Edit **`src/lib/site-data.ts`** for name, email, resume URL, LinkedIn/GitHub, and “Available for” line. Footer and Contact use this.
+- **Links & site copy:** Edit **`src/lib/site-data.ts`** for name, email, resume URL, social links, “Available for” line, and home-page tagline/skills/highlights. Footer, Contact, and Home use this.
+- **Experience, Projects, Skills:** Edit **`src/lib/portfolio-content.ts`** for roles, companies, projects (with real `link` and `repo` when ready), and skill groups. One file for all three pages.
 - **Resume:** Add your PDF as **`public/resume.pdf`** (or set `resumeUrl` in `site-data.ts` to an external URL).
 - **About photo:** Add **`public/photo.jpg`** (e.g. 400×400) for your headshot; the About page shows it or falls back to initials.
-- **About / Experience / Projects:** Replace placeholder text with your real bio, roles, and projects. Projects: add real `link` and `repo` URLs.
+- **About page bio:** Edit the paragraph content in **`src/app/about/page.tsx`** for your real bio.
 - **Production URL:** Set `NEXT_PUBLIC_SITE_URL=https://murtazanaiyar.com` in Vercel (or your host) so sitemap, robots, and Open Graph use the correct base URL.
 
-See **PORTFOLIO_PLAN.md** (plan) and **CRITIQUE.md** (improvement notes).
+See **PORTFOLIO_PLAN.md** for the original plan.

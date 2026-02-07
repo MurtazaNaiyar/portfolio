@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
+import { PROJECTS } from "@/lib/portfolio-content";
+import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Projects | Murtaza Naiyar",
@@ -9,40 +11,8 @@ export const metadata: Metadata = {
     title: "Projects | Murtaza Naiyar",
     description: "Selected work in GenAI, RAG, agents, and MLOps.",
   },
+  alternates: { canonical: `${SITE.baseUrl}/projects` },
 };
-
-const projects = [
-  {
-    title: "RAG-powered product assistant",
-    description:
-      "End-to-end RAG system with custom embeddings and LLM for product Q&A. Deployed with evaluation and monitoring.",
-    tech: ["Python", "LangChain", "OpenAI", "Vector DB"],
-    link: "#",
-    repo: "#",
-    featured: true,
-    gradient: "from-emerald-500/20 via-teal-500/10 to-cyan-500/20",
-  },
-  {
-    title: "Agent framework for internal tools",
-    description:
-      "Multi-agent workflow for internal operations: tool use, planning, and human-in-the-loop.",
-    tech: ["Python", "LLMs", "Agents", "APIs"],
-    link: "#",
-    repo: "#",
-    featured: false,
-    gradient: "from-teal-500/20 via-emerald-500/10 to-cyan-500/20",
-  },
-  {
-    title: "ML evaluation and MLOps pipeline",
-    description:
-      "Automated evaluation, A/B testing, and deployment pipeline for production LLM models.",
-    tech: ["Python", "MLOps", "Evals", "CI/CD"],
-    link: "#",
-    repo: "#",
-    featured: false,
-    gradient: "from-accent/20 via-teal-500/10 to-emerald-500/20",
-  },
-];
 
 export default function ProjectsPage() {
   return (
@@ -59,7 +29,7 @@ export default function ProjectsPage() {
       </AnimateIn>
 
       <AnimateIn className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3" stagger>
-        {projects.map((p) => (
+        {PROJECTS.map((p) => (
           <article
             key={p.title}
             className={`animate-in-view-child group relative flex flex-col overflow-hidden rounded-2xl border border-surface-border bg-surface-elevated/50 transition-all duration-300 hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 hover:-translate-y-1.5 hover:scale-[1.02] ${
@@ -95,24 +65,26 @@ export default function ProjectsPage() {
                   </span>
                 ))}
               </div>
-              <div className="mt-5 flex gap-4">
-                {p.link !== "#" && (
-                  <Link
-                    href={p.link}
-                    className="text-sm font-medium text-accent hover:text-accent-muted transition-colors"
-                  >
-                    Live demo →
-                  </Link>
-                )}
-                {p.repo !== "#" && (
-                  <Link
-                    href={p.repo}
-                    className="text-sm font-medium text-accent hover:text-accent-muted transition-colors"
-                  >
-                    Repo
-                  </Link>
-                )}
-              </div>
+              {(p.link !== "#" || p.repo !== "#") && (
+                <div className="mt-5 flex gap-4">
+                  {p.link !== "#" && (
+                    <Link
+                      href={p.link}
+                      className="text-sm font-medium text-accent hover:text-accent-muted transition-colors"
+                    >
+                      Live demo →
+                    </Link>
+                  )}
+                  {p.repo !== "#" && (
+                    <Link
+                      href={p.repo}
+                      className="text-sm font-medium text-accent hover:text-accent-muted transition-colors"
+                    >
+                      Repo
+                    </Link>
+                  )}
+                </div>
+              )}
             </div>
           </article>
         ))}

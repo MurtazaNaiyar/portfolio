@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/AnimateIn";
 import AboutPhoto from "@/components/AboutPhoto";
+import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "About | Murtaza Naiyar",
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
     title: "About | Murtaza Naiyar",
     description: "GenAI Engineer with 10 years of experience building intelligent systems.",
   },
+  alternates: { canonical: `${SITE.baseUrl}/about` },
 };
 
 export default function AboutPage() {

@@ -84,18 +84,21 @@ export default function ContactForm() {
             disabled={status === "sending"}
           />
         </div>
-        {status === "sent" && (
-          <p className="text-sm text-accent">Thanks! I&apos;ll get back to you soon.</p>
-        )}
-        {status === "error" && (
-          <p className="text-sm text-red-400">
-            Something went wrong. Please email me at{" "}
-            <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
-          </p>
-        )}
+        <div aria-live="polite" aria-atomic="true" className="min-h-[1.5rem]">
+          {status === "sent" && (
+            <p className="text-sm text-accent">Thanks! I&apos;ll get back to you soon.</p>
+          )}
+          {status === "error" && (
+            <p className="text-sm text-red-400">
+              Something went wrong. Please email me at{" "}
+              <a href={`mailto:${SITE.email}`} className="underline">{SITE.email}</a>.
+            </p>
+          )}
+        </div>
         <button
           type="submit"
           disabled={status === "sending"}
+          aria-busy={status === "sending"}
           className="rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-white hover:bg-accent-hover disabled:opacity-50"
         >
           {status === "sending" ? "Sending…" : "Send message"}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import AnimateIn from "@/components/AnimateIn";
+import { EXPERIENCES } from "@/lib/portfolio-content";
+import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Experience | Murtaza Naiyar",
@@ -8,37 +10,8 @@ export const metadata: Metadata = {
     title: "Experience | Murtaza Naiyar",
     description: "A decade of building and shipping ML and AI systems.",
   },
+  alternates: { canonical: `${SITE.baseUrl}/experience` },
 };
-
-const experiences = [
-  {
-    role: "Senior GenAI Engineer",
-    company: "Company Name",
-    period: "2022 – Present",
-    bullets: [
-      "Led design and deployment of LLM-based products and RAG systems.",
-      "Built evaluation pipelines and MLOps for production models.",
-    ],
-  },
-  {
-    role: "ML Engineer",
-    company: "Previous Company",
-    period: "2019 – 2022",
-    bullets: [
-      "Developed NLP and ML models for production applications.",
-      "Collaborated with research and product teams on model lifecycle.",
-    ],
-  },
-  {
-    role: "Software / ML Engineer",
-    company: "Earlier Role",
-    period: "2015 – 2019",
-    bullets: [
-      "Shipped ML-powered features and data pipelines.",
-      "Grew from software engineering into ML and AI.",
-    ],
-  },
-];
 
 export default function ExperiencePage() {
   return (
@@ -56,7 +29,7 @@ export default function ExperiencePage() {
         <div className="absolute left-[11px] top-2 bottom-2 w-px bg-gradient-to-b from-accent/60 via-surface-border to-transparent" />
 
         <AnimateIn as="ul" className="space-y-0" stagger>
-          {experiences.map((exp) => (
+          {EXPERIENCES.map((exp) => (
             <li
               key={exp.role + exp.company}
               className="animate-in-view-child relative flex gap-8 pb-16 last:pb-0"

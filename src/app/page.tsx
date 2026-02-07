@@ -1,39 +1,23 @@
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
-import { SITE } from "@/lib/site-data";
-
-const tagline =
-  "Building intelligent systems with LLMs, ML, and modern AI. 10 years turning research into products.";
-
-const skills = [
-  "LLMs & GenAI",
-  "Machine Learning",
-  "RAG & Agents",
-  "Python",
-  "MLOps",
-  "NLP",
-];
-
-const highlights = [
-  {
-    title: "From research to production",
-    description: "Design and deploy LLM-based products, RAG systems, and evaluation pipelines.",
-  },
-  {
-    title: "Agents & tool use",
-    description: "Multi-agent workflows, tool use, and human-in-the-loop for real applications.",
-  },
-  {
-    title: "Reliable AI systems",
-    description: "MLOps, monitoring, and production-grade ML so AI works when it matters.",
-  },
-];
+import {
+  SITE,
+  HOME_TAGLINE,
+  HOME_SKILLS,
+  HOME_WHAT_I_DO_INTRO,
+  HOME_HIGHLIGHTS,
+  HOME_QUICK_INTRO,
+} from "@/lib/site-data";
 
 export default function HomePage() {
   return (
     <div className="relative z-10">
       {/* Hero — full viewport with gradient orbs */}
-      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 pt-20 pb-24 sm:px-6 overflow-hidden">
+      <section
+        id="hero"
+        className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 pt-20 pb-24 sm:px-6 overflow-hidden"
+        aria-labelledby="hero-heading"
+      >
         <div className="absolute inset-0 bg-hero-gradient" aria-hidden />
         <div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-emerald-500/25 blur-[128px] animate-float"
@@ -52,6 +36,7 @@ export default function HomePage() {
             GenAI Engineer
           </p>
           <h1
+            id="hero-heading"
             className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl opacity-0 animate-fade-in-up"
             style={{ animationDelay: "100ms", animationFillMode: "forwards" }}
           >
@@ -61,14 +46,14 @@ export default function HomePage() {
             className="mx-auto mt-6 max-w-2xl text-lg text-slate-400 leading-relaxed opacity-0 animate-fade-in-up"
             style={{ animationDelay: "250ms", animationFillMode: "forwards" }}
           >
-            {tagline}
+            {HOME_TAGLINE}
           </p>
 
           <div
             className="mt-10 flex flex-wrap justify-center gap-3 opacity-0 animate-fade-in-up"
             style={{ animationDelay: "400ms", animationFillMode: "forwards" }}
           >
-            {skills.map((skill) => (
+            {HOME_SKILLS.map((skill) => (
               <span
                 key={skill}
                 className="rounded-full border border-surface-border bg-surface-elevated/80 px-4 py-2 text-sm text-slate-300 backdrop-blur-sm transition-all duration-300 hover:border-accent/50 hover:text-foreground hover:scale-105 motion-reduce:scale-100"
@@ -105,18 +90,22 @@ export default function HomePage() {
       </section>
 
       {/* What I do — highlight cards with scroll motion */}
-      <section className="relative border-t border-surface-border bg-surface/50 px-4 py-24 sm:px-6">
+      <section
+        id="what-i-do"
+        className="relative border-t border-surface-border bg-surface/50 px-4 py-24 sm:px-6"
+        aria-labelledby="what-i-do-heading"
+      >
         <div className="mx-auto max-w-5xl">
           <AnimateIn>
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            <h2 id="what-i-do-heading" className="text-2xl font-bold text-foreground sm:text-3xl">
               What I do
             </h2>
             <p className="mt-2 max-w-2xl text-slate-400">
-              From idea to production: LLMs, RAG, agents, and systems that scale.
+              {HOME_WHAT_I_DO_INTRO}
             </p>
           </AnimateIn>
           <AnimateIn className="mt-12 grid gap-6 sm:grid-cols-3" stagger>
-            {highlights.map((item, i) => (
+            {HOME_HIGHLIGHTS.map((item, i) => (
               <div
                 key={item.title}
                 className="animate-in-view-child group rounded-2xl border border-surface-border bg-surface-elevated/50 p-6 transition-all duration-300 hover:border-accent/40 hover:bg-surface-elevated hover:shadow-lg hover:shadow-accent/10 hover:-translate-y-1 hover:scale-[1.02] motion-reduce:transform-none"
@@ -135,15 +124,15 @@ export default function HomePage() {
       </section>
 
       {/* Quick intro */}
-      <section className="relative border-t border-surface-border px-4 py-24 sm:px-6">
+      <section
+        id="quick-intro"
+        className="relative border-t border-surface-border px-4 py-24 sm:px-6"
+        aria-labelledby="quick-intro-heading"
+      >
         <AnimateIn className="mx-auto max-w-3xl">
-          <h2 className="text-2xl font-bold text-foreground">Quick intro</h2>
+          <h2 id="quick-intro-heading" className="text-2xl font-bold text-foreground">Quick intro</h2>
           <p className="mt-4 text-slate-400 leading-relaxed">
-            I&apos;m a GenAI engineer with a decade of experience designing and
-            shipping ML and AI systems. I focus on large language models, RAG,
-            agents, and putting research into production. If you&apos;re building
-            something with AI or want to collaborate, I&apos;d love to hear from
-            you.
+            {HOME_QUICK_INTRO}
           </p>
           <Link
             href="/about"
