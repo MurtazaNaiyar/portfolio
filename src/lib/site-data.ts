@@ -70,6 +70,11 @@ export const FOOTER_LINKS = [
   { href: CONTACT_LINKS[5].href, label: "YouTube", desc: "YouTube" },
 ] as const;
 
+/** YouTube: channel URL for the dedicated YouTube tab. Set embedPlaylistId to show embedded videos (uploads playlist ID). */
+export const YOUTUBE_CHANNEL_URL = "https://youtube.com/@MurtazaNaiyar";
+/** Optional: YouTube playlist ID (e.g. channel uploads) to embed on /youtube. Find it in playlist URL or use YouTube Data API. */
+export const YOUTUBE_EMBED_PLAYLIST_ID = "";
+
 /** sameAs for JSON-LD Person (order: LinkedIn, GitHub, Twitter, Instagram, YouTube). */
 export const SAME_AS = [
   "https://linkedin.com/in/murtazanaiyar",
