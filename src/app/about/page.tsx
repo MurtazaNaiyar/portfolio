@@ -5,10 +5,10 @@ import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "About | Murtaza Naiyar",
-  description: "About Murtaza Naiyar — GenAI Engineer with 10 years of experience.",
+  description: "About Murtaza Naiyar — AI Engineer with 10 years of experience.",
   openGraph: {
     title: "About | Murtaza Naiyar",
-    description: "GenAI Engineer with 10 years of experience building intelligent systems.",
+    description: "AI Engineer with 10 years of experience building intelligent systems.",
   },
   alternates: { canonical: `${SITE.baseUrl}/about` },
 };
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <AboutPhoto />
           <div className="space-y-6 text-slate-400 leading-relaxed flex-1 min-w-0">
           <p>
-            I&apos;m a GenAI engineer with 10 years of experience building
+            I&apos;m an AI engineer with 10 years of experience building
             intelligent systems. My work spans machine learning, natural language
             processing, and bringing cutting-edge AI from research into production.
           </p>

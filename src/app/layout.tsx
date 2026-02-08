@@ -14,13 +14,13 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.baseUrl),
-  title: "Murtaza Naiyar | GenAI Engineer",
+  title: "Murtaza Naiyar | AI Engineer",
   description:
-    "GenAI Engineer with 10 years of experience. Building intelligent systems with LLMs, ML, and modern AI.",
+    "AI Engineer with 10 years of experience. Building intelligent systems with LLMs, ML, and modern AI.",
   openGraph: {
-    title: "Murtaza Naiyar | GenAI Engineer",
+    title: "Murtaza Naiyar | AI Engineer",
     description:
-      "GenAI Engineer with 10 years of experience. Building intelligent systems with LLMs, ML, and modern AI.",
+      "AI Engineer with 10 years of experience. Building intelligent systems with LLMs, ML, and modern AI.",
   },
 };
 

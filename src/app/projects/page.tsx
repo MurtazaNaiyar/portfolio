@@ -6,10 +6,10 @@ import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Projects | Murtaza Naiyar",
-  description: "Selected GenAI and ML projects by Murtaza Naiyar.",
+  description: "Selected AI and ML projects by Murtaza Naiyar.",
   openGraph: {
     title: "Projects | Murtaza Naiyar",
-    description: "Selected work in GenAI, RAG, agents, and MLOps.",
+    description: "Selected work in AI, RAG, agents, and MLOps.",
   },
   alternates: { canonical: `${SITE.baseUrl}/projects` },
 };
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
             Projects
           </h1>
           <p className="mt-4 text-slate-400">
-            Selected work in GenAI, RAG, agents, and MLOps. From prototypes to production.
+            Selected work in AI, RAG, agents, and MLOps. From prototypes to production.
           </p>
         </div>
       </AnimateIn>

@@ -33,7 +33,7 @@ export default function HomePage() {
             className="text-sm font-medium tracking-widest text-accent uppercase opacity-0 animate-fade-in"
             style={{ animationDelay: "0ms", animationFillMode: "forwards" }}
           >
-            GenAI Engineer
+            AI Engineer
           </p>
           <h1
             id="hero-heading"

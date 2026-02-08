@@ -5,10 +5,10 @@ import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Skills | Murtaza Naiyar",
-  description: "Technical skills of Murtaza Naiyar — GenAI, ML, and engineering.",
+  description: "Technical skills of Murtaza Naiyar — AI, ML, and engineering.",
   openGraph: {
     title: "Skills | Murtaza Naiyar",
-    description: "GenAI, ML, and engineering — in practice for 10 years.",
+    description: "AI, ML, and engineering — in practice for 10 years.",
   },
   alternates: { canonical: `${SITE.baseUrl}/skills` },
 };
@@ -21,7 +21,7 @@ export default function SkillsPage() {
           Skills
         </h1>
         <p className="mt-4 text-slate-400">
-          GenAI, ML, and engineering — in practice for 10 years.
+          AI, ML, and engineering — in practice for 10 years.
         </p>
       </AnimateIn>
 

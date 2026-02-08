@@ -5,7 +5,7 @@
 
 export const EXPERIENCES = [
   {
-    role: "Senior GenAI Engineer",
+    role: "Senior AI Engineer",
     company: "Company Name",
     period: "2022 – Present",
     bullets: [
@@ -68,7 +68,7 @@ export const PROJECTS = [
 
 export const SKILL_GROUPS = [
   {
-    title: "GenAI & LLMs",
+    title: "AI & LLMs",
     icon: "◇",
     items: [
       "LLM fine-tuning & prompting",

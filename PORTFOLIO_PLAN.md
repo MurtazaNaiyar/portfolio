@@ -2,7 +2,7 @@
 
 ## Overview
 - **Domain:** murtazanaiyar.com (already purchased)
-- **Role:** GenAI Engineer, 10 years experience
+- **Role:** AI Engineer, 10 years experience
 - **Goal:** Professional portfolio with homepage + additional sections/tabs
 
 ---
@@ -12,10 +12,10 @@
 | Tab/Page | Purpose | Content Ideas |
 |----------|---------|---------------|
 | **Home** | First impression, who you are | Hero (name, title, one-liner), short bio, key skills, CTA to projects/contact |
-| **About** | Deeper story & expertise | Full bio, experience timeline, education, certifications, what you care about (GenAI, ML, products) |
+| **About** | Deeper story & expertise | Full bio, experience timeline, education, certifications, what you care about (AI, ML, products) |
 | **Experience** | Career & roles | Companies, roles, dates, highlights; optional timeline or list view |
-| **Projects** | Proof of work | 4–8 standout projects (GenAI/ML apps, demos, open source) with links, tech stack, outcomes |
-| **Skills** | Technical clarity | GenAI/LLMs, ML frameworks, languages, tools, platforms in a scannable layout |
+| **Projects** | Proof of work | 4–8 standout projects (AI/ML apps, demos, open source) with links, tech stack, outcomes |
+| **Skills** | Technical clarity | AI/LLMs, ML frameworks, languages, tools, platforms in a scannable layout |
 | **Blog** (optional) | Thought leadership | Articles, notes, or “Building in public” — can add later |
 | **Contact** | Reach you | Email, LinkedIn, GitHub, optional contact form or Calendly |
 
@@ -55,7 +55,7 @@ Result: `https://murtazanaiyar.com` (and optionally `https://www.murtazanaiyar.c
 - [ ] Routing for: Home, About, Experience, Projects, Skills, Contact
 
 ### Phase 2 — Homepage
-- [ ] Hero: name, “GenAI Engineer,” short tagline
+- [ ] Hero: name, “AI Engineer,” short tagline
 - [ ] Bio snippet (2–3 sentences)
 - [ ] Key skills (icons or pills)
 - [ ] CTA buttons (e.g. View Projects, Contact)
@@ -64,7 +64,7 @@ Result: `https://murtazanaiyar.com` (and optionally `https://www.murtazanaiyar.c
 - [ ] **About:** Full bio, timeline or narrative, optional photo
 - [ ] **Experience:** List or timeline of roles with bullets
 - [ ] **Projects:** Cards with title, description, tech, links (demo/GitHub)
-- [ ] **Skills:** Grouped by category (GenAI/LLMs, ML, Languages, Tools)
+- [ ] **Skills:** Grouped by category (AI/LLMs, ML, Languages, Tools)
 - [ ] **Contact:** Links + optional form or “Mail me” button
 
 ### Phase 4 — Polish & Launch

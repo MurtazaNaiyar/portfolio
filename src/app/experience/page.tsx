@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Experience | Murtaza Naiyar",
-  description: "Career and experience of Murtaza Naiyar, GenAI Engineer.",
+  description: "Career and experience of Murtaza Naiyar, AI Engineer.",
   openGraph: {
     title: "Experience | Murtaza Naiyar",
     description: "A decade of building and shipping ML and AI systems.",

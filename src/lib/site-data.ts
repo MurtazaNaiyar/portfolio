@@ -5,14 +5,14 @@
 
 export const SITE = {
   name: "Murtaza Naiyar",
-  role: "GenAI Engineer",
+  role: "AI Engineer",
   /** Base URL for canonical and Open Graph. Set in production to https://murtazanaiyar.com */
   baseUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://murtazanaiyar.com",
   email: "hello@murtazanaiyar.com",
   /** Resume/CV PDF. Replace with your file (e.g. in /public/resume.pdf) or external link. */
   resumeUrl: "/resume.pdf",
   /** Short line for "Available for" / hire me. */
-  availableFor: "Available for consulting and full-time roles in GenAI & ML.",
+  availableFor: "Available for consulting and full-time roles in AI & ML.",
 } as const;
 
 export const CONTACT_LINKS = [
@@ -84,7 +84,7 @@ export const HOME_TAGLINE =
   "Building intelligent systems with LLMs, ML, and modern AI. 10 years turning research into products.";
 
 export const HOME_SKILLS = [
-  "LLMs & GenAI",
+  "LLMs & AI",
   "Machine Learning",
   "RAG & Agents",
   "Python",
@@ -113,4 +113,4 @@ export const HOME_HIGHLIGHTS = [
 
 /** Home page: quick intro paragraph. */
 export const HOME_QUICK_INTRO =
-  "I'm a GenAI engineer with a decade of experience designing and shipping ML and AI systems. I focus on large language models, RAG, agents, and putting research into production. If you're building something with AI or want to collaborate, I'd love to hear from you.";
+  "I'm an AI engineer with a decade of experience designing and shipping ML and AI systems. I focus on large language models, RAG, agents, and putting research into production. If you're building something with AI or want to collaborate, I'd love to hear from you.";
